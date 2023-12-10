@@ -1,5 +1,5 @@
 import pandas as pd
-
+import numpy as np
 
 def calculate_distance_matrix(df)->pd.DataFrame():
     
@@ -46,9 +46,9 @@ def calculate_toll_rate(df)->pd.DataFrame():
    rate_coefficients = {'moto': 0.8, 'car': 1.2, 'rv': 1.5, 'bus': 2.2, 'truck': 3.6}
    df2= df1.copy()
    for vehicle_type, rate_coefficient in rate_coefficients.items():
-        column_name = f"{vehicle_type}_toll"
-        df2[column_name] = df2['distance'] * rate_coefficient
-
+    column_name = f"{vehicle_type}_toll"
+    df2[column_name] = df2['distance'] * rate_coefficient
+        
     return df2
 
 
